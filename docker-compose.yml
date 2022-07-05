@@ -3,10 +3,11 @@ services:
 
   fe01:
     image: httpd:latest
+    container_name: fe01
     ports: 
       - "80:80"
     volumes:
-      - ./fe01: /usr/local/apache2/htdocs
+      - ./fe01:/usr/local/apache2/htdocs
 
   
 
