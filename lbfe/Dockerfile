@@ -1,3 +1,2 @@
-FROM nginx
-RUN mv /etc/nginx/nginx.conf /etc/nginx/default000.conf 
+FROM nginx 
 COPY nginx.conf /etc/nginx/nginx.conf
