@@ -13,6 +13,6 @@ services:
     image: httpd:latest
     container_name: fe02
     ports: 
-      - "80:81"
+      - "89:80"
     volumes:
       - ./fe02:/usr/local/apache2/htdocs
