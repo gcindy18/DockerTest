@@ -1,7 +1,6 @@
 version: "3.8"
 services:
   lb_fe:
-    image: nginx:latest
     build: ./lbfe
     ports:
       - "80:80"
