@@ -2,9 +2,10 @@ version: "3.8"
 services:
   lb_fe:
     image: nginx:latest
-    volumes: ./lbfe/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "80:80"
+    volumes: ./lbfe/nginx.conf:/etc/nginx/nginx.conf
+    
 
   fe01:
     image: httpd:latest
