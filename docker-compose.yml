@@ -1,9 +1,10 @@
 version: "3.8"
 services:
 
-  nginxfe:
-    image: nginx:stable
-    ports: 
+  lbfe:
+    build:
+      context: lbfe
+    port:
       - 80:80
     restart: always
 
