@@ -4,7 +4,7 @@ services:
     image: nginx:latest
     ports:
       - "80:80"
-    volumes: ./lbfe:/etc/nginx/nginx.conf
+    build: ./lbfe
     
 
   fe01:
