@@ -9,5 +9,10 @@ services:
     volumes:
       - ./fe01:/usr/local/apache2/htdocs
 
-  
-
+  fe02:
+    image: httpd:latest
+    container_name: fe02
+    ports: 
+      - "80:81"
+    volumes:
+      - ./fe02:/usr/local/apache2/htdocs
