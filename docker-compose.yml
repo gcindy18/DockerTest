@@ -5,7 +5,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - .lbfe/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./lbfe/nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - fe01
       - fe02
