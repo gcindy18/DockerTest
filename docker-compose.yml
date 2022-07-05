@@ -11,12 +11,12 @@ services:
     ports: 
       - 10001:10001
     volumes:
-      - ./fe01:/var/www/html
+      - ./fe01:/etc/nginx/templates
 
   fe02: 
     image: nginx:stable
     ports: 
       - 10002:10002
     volumes:
-      - ./fe02:/var/www/html
+      - ./fe02:/etc/nginx/templates
 
