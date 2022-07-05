@@ -1,11 +1,16 @@
 version: "3.8"
 services:
+  lb_fe:
+    image: nginx:latest
+    build: ./lbfe
+    ports:
+      - "80:80"
 
   fe01:
     image: httpd:latest
     container_name: fe01
     ports: 
-      - "80:80"
+      - "10001:80"
     volumes:
       - ./fe01:/usr/local/apache2/htdocs
 
@@ -13,6 +18,6 @@ services:
     image: httpd:latest
     container_name: fe02
     ports: 
-      - "89:80"
+      - "10002:80"
     volumes:
       - ./fe02:/usr/local/apache2/htdocs
