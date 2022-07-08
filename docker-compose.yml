@@ -3,7 +3,7 @@ services:
   lb_fe:
     image: nginx:latest
     ports:
-      - "8080:80"
+      - "80:80"
     build: ./lbfe
     depends_on:
       - fe01
