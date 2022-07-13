@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  # NodeJS app
+  api:
+    # if using scale don't use container_name, and ports 
+    #container_name: nodejs_api
+    build: .
+    #ports:
+    #  - 3000:3000
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx_conf:/etc/nginx/conf.d
+    depends_on:
+      - api
+    ports:
+      - 3000:3000
