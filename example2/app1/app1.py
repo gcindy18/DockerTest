@@ -1,4 +1,6 @@
-from flask import request, Flask
+from flask        import request, Flask
+from markupsafe   import escape
+
 import json
 
 
