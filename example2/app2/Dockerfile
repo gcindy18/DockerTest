@@ -1,14 +1,10 @@
-FROM python:3.6
+FROM python:3
 
-COPY ./requirements.txt /requirements.txt
+WORKDIR /usr/src/app
 
-WORKDIR /
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip uninstall -r requirements.txt
-RUN pip install -r requirements.txt
+COPY . .
 
-COPY . /
-
-ENTRYPOINT [ "python3" ]
-
-CMD [ "app2.py" ]
+CMD [ "python", "./app2.py" ]
