@@ -15,13 +15,13 @@ services:
     container_name: fe01
     ports: 
       - "10001:80"
-    volumes:
-      - ./fe01:/usr/local/apache2/htdocs
+    build:
+      - ./fe01
 
   fe02:
     image: httpd:latest
     container_name: fe02
     ports: 
       - "10002:80"
-    volumes:
-      - ./fe02:/usr/local/apache2/htdocs
+    build:
+      - ./fe02
