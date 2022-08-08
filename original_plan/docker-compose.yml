@@ -1,27 +1,25 @@
-version: "3.8"
+version: '3.9'
 services:
   lbfe:
-    image: nginx:latest
+    #image: nginx:latest
     ports:
       - "80:80"
-    volumes: ./lbfe:/etc/nginx/conf.d
+    build: ./lbfe
     depends_on:
       - fe01
       - fe02
     
 
   fe01:
-    image: httpd:latest
+    #image: httpd:latest
     container_name: fe01
     ports: 
       - "10001:80"
-    build:
-      - ./fe01
+    build: ./fe01
 
   fe02:
-    image: httpd:latest
+    #image: httpd:latest
     container_name: fe02
     ports: 
       - "10002:80"
-    build:
-      - ./fe02
+    build: ./fe02
