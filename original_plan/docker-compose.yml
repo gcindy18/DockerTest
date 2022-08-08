@@ -1,10 +1,10 @@
 version: "3.8"
 services:
-  lb_fe:
+  lbfe:
     image: nginx:latest
     ports:
       - "80:80"
-    build: ./lbfe
+    volumes: ./lbfe:/etc/nginx/conf.d
     depends_on:
       - fe01
       - fe02

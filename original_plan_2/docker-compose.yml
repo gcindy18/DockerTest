@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  # FE
+  fe:
+    build: .
+
+  lbfe:
+    image: nginx:latest
+    volumes:
+      - ./lbfe:/etc/nginx/conf.d
+    depends_on:
+      - fe
+    ports:
+      - 80
+
+  media:
