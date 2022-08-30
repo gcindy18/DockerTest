@@ -26,8 +26,8 @@ services:
 
   lbbe:
     #image: nginx:latest
-    ports:
-      - "3000:3000"
+    #ports:
+    #  - "3000:3000"
     build: ./lbfe
     depends_on:
       - media01
