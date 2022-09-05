@@ -10,6 +10,14 @@ services:
       front:
         ipv4_address: 10.0.1.2
 
+    lbfe02:
+      build: ./lbfe
+      depends_on:
+        - fe01
+        - fe02
+      ports:
+        - "80:80"
+
   fe01:
     #image: httpd:latest
     container_name: fe01
