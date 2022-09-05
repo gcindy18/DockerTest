@@ -13,12 +13,12 @@ services:
 
   lbfe02:
     container_name: lbfe02
-    build: ./lbfe
+    build: ./lbfe02
     depends_on:
       - fe01
       - fe02
     ports:
-      - "80:80"
+      - "3000:3000"
 
   fe01:
     #image: httpd:latest
