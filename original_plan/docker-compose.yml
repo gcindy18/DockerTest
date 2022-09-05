@@ -2,6 +2,7 @@ version: '3.9'
 services:
   lbfe:
     #image: nginx:latest
+    container_name: lbfe
     build: ./lbfe
     depends_on:
       - fe01
@@ -11,6 +12,7 @@ services:
         ipv4_address: 10.0.1.2
 
   lbfe02:
+    container_name: lbfe02
     build: ./lbfe
     depends_on:
       - fe01
@@ -42,6 +44,7 @@ services:
     #image: nginx:latest
     #ports:
     #  - "3000:3000"
+    container_name: lbbe
     build: ./lbfe
     depends_on:
       - media01
