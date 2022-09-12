@@ -27,7 +27,7 @@ services:
     depends_on:
       - media01
       - media02
-      ports: 
+    ports: 
       - "8008:8008"
 
   media01:
