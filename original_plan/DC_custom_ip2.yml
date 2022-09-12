@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  lbfe:
+    container_name: lbfe
+    build: ./lbfe
+    depends_on:
+      - fe01
+      - fe02
+    ipv4_address: 172.17.0.10
+
+  fe01:
+    container_name: fe01
+    build: ./fe01
+    ipv4_address: 172.17.0.11
+
+  fe02:
+    container_name: fe02
+    build: ./fe02
+    ipv4_address: 172.17.0.12
+
+  lbbe:
+    container_name: lbbe
+    build: ./lbfe
+    depends_on:
+      - media01
+      - media02
+    ipv4_address: 172.17.0.20
+
+  media01:
+    container_name: media01
+    build: ./media01
+    ipv4_address: 172.17.0.21
+
+  media02:
+    container_name: media02
+    build: ./media02
+    ipv4_address: 172.17.0.22
+
+
