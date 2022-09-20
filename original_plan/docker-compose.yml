@@ -6,6 +6,8 @@ services:
     depends_on:
       - fe01
       - fe02
+    ports:
+      - "80:80"
     networks:
       front:
         ipv4_address: 10.0.1.2
@@ -34,11 +36,12 @@ services:
     #image: nginx:latest
     #ports:
     #  - "3000:3000"
-    build: ./lbfe
+    build: ./lbbe
     depends_on:
       - media01
       - media02
-
+    ports:
+      - "8080:80"
     networks:
       back:
         ipv4_address: 10.0.2.2
